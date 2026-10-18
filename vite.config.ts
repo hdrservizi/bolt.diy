@@ -151,9 +151,9 @@ export default defineConfig((config) => {
         build: { manifest: true },
       },
     },
+    server: { allowedHosts: true },
+    preview: { allowedHosts: true },
     plugins: [
-      server: { allowedHosts: true },
-      preview: { allowedHosts: true },
       /*
        * Browser polyfills for `Buffer` / `process` / `global`.
        *
