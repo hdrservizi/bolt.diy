@@ -152,6 +152,8 @@ export default defineConfig((config) => {
       },
     },
     plugins: [
+      server: { allowedHosts: true },
+      preview: { allowedHosts: true },
       /*
        * Browser polyfills for `Buffer` / `process` / `global`.
        *
@@ -170,8 +172,6 @@ export default defineConfig((config) => {
        * those are real ESM builds with named exports; the underlying `buffer`
        * package is CommonJS and exposes no named `Buffer` export.
        */
-      server: { allowedHosts: true, },
-      preview: { allowedHosts: true, },
       browserPolyfills(),
       config.mode !== 'test' && cloudflare({ viteEnvironment: { name: 'ssr' } }),
       config.mode !== 'test' && reactRouter(),
